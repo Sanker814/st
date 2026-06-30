@@ -1,5 +1,5 @@
 # st version
-VERSION = 0.9.3
+VERSION = 0.9.3-sanker814-----$(shell date +%Y.%m.%d@%H:%M:%S)
 
 # Customize below to fit your system
 

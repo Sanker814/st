@@ -1351,7 +1351,7 @@ tsetchar(Rune u, const Glyph *attr, int x, int y)
 	line[x].u = u;
 
 	if (isboxdraw(u))
-		term.line[y][x].mode |= ATTR_BOXDRAW;
+		line[x].mode |= ATTR_BOXDRAW;
 }
 
 void
@@ -2942,7 +2942,7 @@ copyurl(const Arg *arg) {
 		** we hit previous occurrence of URL
 		*/
 		for (col = colend; col--;)
-			if (daddch(&dfa, term.line[row][col].u < 128 ? term.line[row][col].u : ' '))
+			if (daddch(&dfa, TLINE(row)[col].u < 128 ? TLINE(row)[col].u : ' '))
 				break;
 
 		if (col >= 0)
